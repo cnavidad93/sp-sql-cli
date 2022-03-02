@@ -3,16 +3,10 @@
 Command Line utility to generate a SQL script for creating new study programmes from a CSV.
 
 ## How to use it
-First open a terminal in the current directory and run a npm install to get all dependencies.
+Open a terminal and run.
 
 ```
- npm install
+ npx sp-sql-cli
 ```
 
-Then run
-
-```
- npm run start
-```
-
-to launch the CLI tool.
+Now follow the instructions from the CLI tool.
