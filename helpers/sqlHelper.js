@@ -1,12 +1,12 @@
 import { v4 as uuid } from "uuid";
 import { FINALITIES, GRADES, GROUPS, TYPES } from "../constants/constants.js";
-import { errorMsg } from "./commonHelpers.js";
+import { errorMsg, formatDate } from "./commonHelpers.js";
 
 const createStudyProgrammeGroup = (href, date) => {
   if (!href) errorMsg(`[Error creating studyProgrammes]`, `No href founded.`);
 
   return {
-    startDate: date ?? new Date().toISOString,
+    startDate: formatDate(date),
     studyProgrammeGroup: {
       href,
     },
@@ -36,7 +36,7 @@ export const build = (rows = "") => {
     ("${uuid()}",
       "${TYPES[type]}",
       "${title}",
-      "${date}",
+      "${formatDate(date)}",
       '${JSON.stringify(studyProgrammeGroups)}'::jsonb
     );`;
   });

@@ -19,3 +19,9 @@ export const errorMsg = (title, msg) => {
   console.log(chalk.red.bold(msg));
   return process.exit(1);
 }
+
+export const formatDate = (date) => {
+  if(!date) return new Date().toISOString();
+  
+  return date.split('/').reverse().join('-');
+}
