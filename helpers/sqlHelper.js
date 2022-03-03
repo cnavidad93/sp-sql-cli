@@ -33,13 +33,13 @@ export const build = (rows = "") => {
 
     return `
     -- New study programme : ${title}
-    ("${uuid()}",
-      "${TYPES[type]}",
-      "${title}",
-      "${formatDate(date)}",
+    ('${uuid()}',
+      '${TYPES[type]}',
+      '${title}',
+      '${formatDate(date)}',
       '${JSON.stringify(studyProgrammeGroups)}'::jsonb
-    );`;
+    )`;
   });
 
-  return sql + values.join("");
+  return sql + values.join(",");
 };
